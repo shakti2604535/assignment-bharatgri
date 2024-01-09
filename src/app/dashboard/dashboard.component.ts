@@ -52,7 +52,7 @@ export class DashboardComponent implements OnInit {
       const endIndex = startIndex + this.itemsPerPage;
       this.crops = this.detail.slice(startIndex, endIndex);
     } else if (this.searchitem) {
-      const startIndex = event.pageIndex * this.itemsPerPage;
+      const startIndex = 0 * this.itemsPerPage;
       const endIndex = startIndex + this.itemsPerPage;
       this.crops = this.searchDetail.slice(startIndex, endIndex);
     }
@@ -65,6 +65,7 @@ export class DashboardComponent implements OnInit {
 
   searchItems(event: any): void {
     if (event.length > 0) {
+      this.searchitem = true;
       this.searchDetail = this.detail.filter((item) =>
         item.crop_name.toLowerCase().includes(event.toLowerCase())
       );
@@ -73,6 +74,7 @@ export class DashboardComponent implements OnInit {
     } else {
       this.crops = this.detail.slice(0, 10);
       this.length = this.detail.length;
+      this.searchitem = false;
     }
   }
 }
