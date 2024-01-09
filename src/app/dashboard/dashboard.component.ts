@@ -47,13 +47,11 @@ export class DashboardComponent implements OnInit {
   }
 
   handlePageEvent(event: any) {
-    if (event.pageIndex < 5 && this.searchitem) {
-      console.log(event);
+    if (event.pageIndex < 5 && !this.searchitem) {
       const startIndex = event.pageIndex * this.itemsPerPage;
       const endIndex = startIndex + this.itemsPerPage;
       this.crops = this.detail.slice(startIndex, endIndex);
-      console.log(this.crops);
-    } else if (!this.searchitem) {
+    } else if (this.searchitem) {
       const startIndex = event.pageIndex * this.itemsPerPage;
       const endIndex = startIndex + this.itemsPerPage;
       this.crops = this.searchDetail.slice(startIndex, endIndex);
