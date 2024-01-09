@@ -1,0 +1,30 @@
+<mat-toolbar color="primary">
+  <mat-icon>person</mat-icon>
+  <span class="spacer"></span>
+  <span>{{ username }}</span>
+  <mat-form-field appearance="fill" class="search-box">
+    <input
+      #filterInput
+      matInput
+      (input)="searchItems(filterInput.value)"
+      placeholder="search crop"
+    />
+  </mat-form-field>
+</mat-toolbar>
+
+<div *ngIf="crops.length > 0; else loading" class="crop-container">
+  <app-crop-card *ngFor="let crop of crops" [crop]="crop"></app-crop-card>
+</div>
+
+<ng-template #loading>
+  <p>Loading crops...</p>
+</ng-template>
+
+<mat-paginator
+  [length]="length"
+  [pageSize]="10"
+  [pageSizeOptions]="[5, 10, 25, 100]"
+  aria-label="Select page"
+  (page)="handlePageEvent($event)"
+>
+</mat-paginator>

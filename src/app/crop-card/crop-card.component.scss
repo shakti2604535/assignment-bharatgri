@@ -1,0 +1,28 @@
+// .crop-card {
+//   max-width: calc(100%);
+//   margin: 8px;
+// }
+
+// .crop-image {
+//   width: 100%;
+//   height: auto;
+//   object-fit: contain;
+// }
+.container {
+  padding: 24px;
+}
+.change-cursor:hover {
+  cursor: pointer;
+}
+
+img {
+  width: 100%;
+  height: 300px;
+  object-fit: fill;
+}
+
+.responsive-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 24px;
+}

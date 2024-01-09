@@ -1,0 +1,12 @@
+<div class="container responsive-grid">
+  <mat-card class="change-cursor">
+    <img
+      mat-card-image
+      [src]="crop?.thumbnails?.[0]?.image"
+      (click)="openImageModal()"
+    />
+    <mat-card-content>
+      <p>{{ crop?.crop_name }}</p>
+    </mat-card-content>
+  </mat-card>
+</div>

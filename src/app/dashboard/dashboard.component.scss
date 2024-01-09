@@ -1,0 +1,40 @@
+/* Custom styles for MatToolbar */
+mat-toolbar {
+  height: 64px; /* Adjust the height as per your design requirements */
+  padding: 0 16px; /* Add padding to the toolbar */
+}
+
+/* Style for the username */
+mat-toolbar span {
+  margin-left: 16px; /* Add left margin to separate the username from the title */
+  font-weight: bold; /* Make the username bold */
+  color: white; /* Set the text color to white */
+}
+/* Define styles for the crop container */
+.crop-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+/* Define styles for the crop cards */
+app-crop-card {
+  flex: 0 0 calc(33.33% - 16px); /* Set the width for 3 cards in a row */
+  margin-right: 16px; /* Add right margin to separate the cards */
+  margin-bottom: 16px; /* Add bottom margin to separate the rows */
+}
+.search-box {
+  /* Align items horizontally to the right */
+  justify-content: flex-end;
+  margin-bottom: 8px;
+  margin-top: 29px;
+  /* Add margin or padding to push the search box towards the right */
+  margin-left: auto;
+}
+/* Adjust styles for smaller screens (optional) */
+@media screen and (max-width: 1024px) {
+  app-crop-card {
+    flex: 0 0 100%; /* Set full width for cards in a column */
+    margin-right: 0; /* Remove right margin */
+  }
+}
